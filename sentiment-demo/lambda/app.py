@@ -3,6 +3,7 @@ import json
 import boto3
 
 def handler(event, context):
+    
 
     client = boto3.client('comprehend')
     body = event["body"]
@@ -11,8 +12,10 @@ def handler(event, context):
             "statusCode": 200,
             "headers": {
                 "Content-Type": "application/json"
+                "Hello world"
             },
             "body": json.dumps({
                 "sentiment ": json.dumps(sentiment)
             })
     }
+    
